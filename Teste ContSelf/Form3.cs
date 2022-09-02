@@ -20,34 +20,37 @@ namespace Teste_ContSelf
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        { 
+            //Confere se nenhum dos campos esta vazio
             if (txtNome.Text.Equals("") || trbAtividades.Text.Equals("") || txtSalario.Value <= 0)
             {
                 MessageBox.Show("Informações invalidas, favor conferir os dados inseridos");
             }
             else
             {
-               
-                    con.Open();
-                    string sqlQuery = "USE Funcionarios;" +
-                   "UPDATE Pessoas SET " +
-                   "nome ='" + txtNome.Text +"'," +
-                   "DataNascimento = '" + dtpData.Text + "', " +
-                   "salario = " + txtSalario.Value + ", " +
-                   "atividades = '" + trbAtividades.Text + "' " +
-                   "WHERE codFuncionario = "+ txtUsuario.Value +";";
-
-                    SqlCommand cmd = new SqlCommand(sqlQuery, con);
-
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Atualização bem sucedida");
-                    var Inicio = new Form1();
-                    Inicio.Show();
-                    Inicio.Recarrega();
-                    this.Close();
+                //Realiza a atualização do usuario de acordo com o index digitado
+                con.Open();
+                string sqlQuery = "USE Funcionarios;" +
+                "UPDATE Pessoas SET " +
+                "nome ='" + txtNome.Text +"'," +
+                "DataNascimento = '" + dtpData.Text + "', " +
+                "salario = " + txtSalario.Value + ", " +
+                "atividades = '" + trbAtividades.Text + "' " +
+                "WHERE codFuncionario = "+ txtUsuario.Value +";";
+                       
+                //Executa a query e fecha a conexão com o banco
+                SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Atualização bem sucedida");
+                this.Close();
 
             }
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

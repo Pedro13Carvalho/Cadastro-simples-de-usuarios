@@ -186,6 +186,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Editar Usuario";
+            this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSalario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario)).EndInit();
             this.ResumeLayout(false);
