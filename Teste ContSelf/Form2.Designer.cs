@@ -44,7 +44,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 39);
+            this.label1.Location = new System.Drawing.Point(84, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 15);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(148, 36);
+            this.txtNome.Location = new System.Drawing.Point(130, 16);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(275, 23);
             this.txtNome.TabIndex = 1;
@@ -60,7 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 84);
+            this.label2.Location = new System.Drawing.Point(10, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 15);
             this.label2.TabIndex = 2;
@@ -69,7 +69,7 @@
             // dtpData
             // 
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(148, 78);
+            this.dtpData.Location = new System.Drawing.Point(130, 58);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(200, 23);
             this.dtpData.TabIndex = 3;
@@ -83,7 +83,7 @@
             0,
             0,
             0});
-            this.txtSalario.Location = new System.Drawing.Point(148, 127);
+            this.txtSalario.Location = new System.Drawing.Point(130, 107);
             this.txtSalario.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -96,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(92, 129);
+            this.label3.Location = new System.Drawing.Point(74, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 5;
@@ -105,7 +105,7 @@
             // trbAtividades
             // 
             this.trbAtividades.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.trbAtividades.Location = new System.Drawing.Point(148, 178);
+            this.trbAtividades.Location = new System.Drawing.Point(130, 158);
             this.trbAtividades.Name = "trbAtividades";
             this.trbAtividades.Size = new System.Drawing.Size(397, 117);
             this.trbAtividades.TabIndex = 6;
@@ -114,7 +114,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 178);
+            this.label4.Location = new System.Drawing.Point(62, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 15);
             this.label4.TabIndex = 7;
@@ -122,7 +122,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(80, 319);
+            this.button1.Location = new System.Drawing.Point(62, 299);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 75);
             this.button1.TabIndex = 8;
@@ -132,7 +132,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(258, 319);
+            this.button2.Location = new System.Drawing.Point(240, 299);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 75);
             this.button2.TabIndex = 9;
@@ -156,7 +156,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Criar novo Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.txtSalario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

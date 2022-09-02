@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,7 +19,9 @@ namespace Teste_ContSelf
         public Form1()
         {
             InitializeComponent();
+            con.Open();
             Recarrega();
+            con.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,9 +49,44 @@ namespace Teste_ContSelf
             var Cadastro = new Form2();
             Cadastro.Show();
         }
-        public void Recarrega() 
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             con.Open();
+            Recarrega();
+            con.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(txtPesquisa.Text, @"^[0-9]+$"))
+            {
+                con.Open();
+                string sqlQuery =
+                "USE Funcionarios;" +
+                "DELETE FROM Pessoas WHERE codFuncionario = " + Int32.Parse(txtPesquisa.Text) + ";";
+                DataTable dataTable = new DataTable();
+                SqlDataAdapter dataAdapter = new(sqlQuery, con);
+
+                dataAdapter.Fill(dataTable);
+                dgvPessoas.DataSource = dataTable;
+                Recarrega();
+                con.Close();
+            }
+            else
+            {
+                MessageBox.Show("Insira um ID valido");
+            }
+        }
+
+        public void Recarrega()
+        {
             string sqlQuery =
             "USE Funcionarios;" +
             "SELECT * FROM Pessoas;";
@@ -57,12 +95,12 @@ namespace Teste_ContSelf
 
             dataAdapter.Fill(dataTable);
             dgvPessoas.DataSource = dataTable;
-            con.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-
+            var Editar = new Form3();
+            Editar.Show();
         }
     }
 }
